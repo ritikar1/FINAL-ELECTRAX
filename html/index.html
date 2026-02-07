@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrax | Intelligent Energy</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+  body { scroll-behavior: smooth; }
+
+  .glass {
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(14px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg,#22c55e,#4ade80,#16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s infinite linear;
+  }
+
+  @keyframes gradientMove {
+    from { background-position: 0% }
+    to { background-position: 200% }
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+
+  .card-3d:hover {
+    transform: rotateY(6deg) rotateX(4deg) scale(1.03);
+  }
+</style>
+
+</head>
+
+<body class="bg-black text-gray-200">
+    <!-- Scroll Progress Bar -->
+<div id="progress" class="fixed top-0 left-0 h-1 bg-green-400 z-50 w-0"></div>
+
+<!-- PAGE LOADER -->
+<div id="loader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center">
+  <h1 class="text-3xl font-extrabold gradient-text animate-pulse">Electrax</h1>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <h1 class="text-2xl font-extrabold text-green-400">Electrax</h1>
+
+    <!-- DESKTOP MENU -->
+    <ul class="hidden md:flex space-x-6 font-medium text-white">
+      <li><a href="index.html" class="hover:text-green-400">Home</a></li>
+      <li><a href="about.html" class="hover:text-green-400">About</a></li>
+      <li><a href="products.html" class="hover:text-green-400">Products</a></li>
+      <li><a href="contact.html" class="hover:text-green-400">Contact</a></li>
+    </ul>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button onclick="toggleMenu()" class="text-3xl text-white">
+     ☰
+    </button>
+
+
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<!-- MOBILE / DESKTOP HAMBURGER MENU -->
+<div id="mobileMenu"
+  class="hidden fixed top-20 right-6 bg-gray-900 border border-gray-800 rounded-2xl w-64 z-50 shadow-2xl">
+
+  <a href="index.html" class="block px-6 py-4 hover:bg-gray-800">🏠 Home</a>
+  <a href="about.html" class="block px-6 py-4 hover:bg-gray-800">ℹ️ About Us</a>
+  <a href="products.html" class="block px-6 py-4 hover:bg-gray-800">📦 Products</a>
+
+  <hr class="border-gray-700">
+
+  <a href="contact.html" class="block px-6 py-4 hover:bg-gray-800">📞 Contact</a>
+  <a href="contact.html#quote" class="block px-6 py-4 hover:bg-gray-800">
+    💼 Request a Quote
+  </a>
+
+  <a href="contact.html#dealer" class="block px-6 py-4 hover:bg-gray-800">
+    🤝 Become a Dealer
+  </a>
+
+  <hr class="border-gray-700">
+
+  <a href="products.html#catalogue" class="block px-6 py-4 hover:bg-gray-800">
+    📥 Download Catalogue
+  </a>
+
+  <a href="#faq" class="block px-6 py-4 hover:bg-gray-800">
+    ❓ FAQ
+  </a>
+
+  <a href="contact.html#support"
+     class="block px-6 py-4 text-green-400 font-semibold hover:bg-gray-800">
+    🛠 24/7 Support
+  </a>
+</div>
+
+
+<!-- ================= HERO ================= -->
+<section
+  class="h-screen bg-fixed bg-cover bg-center relative flex items-center justify-center"
+  style="background-image:url('../images/hero.jpg')">
+<div class="absolute inset-0 bg-black/70"></div>
+
+
+  <div class="relative glass p-14 rounded-3xl max-w-4xl text-center" data-aos="zoom-in">
+    <h2 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
+      <span class="gradient-text">Intelligent Energy</span><br/>For a Smarter Planet
+    </h2>
+    <p class="text-xl text-gray-300 mb-10">
+      Advanced renewable & electrical systems engineered for performance,
+      scalability, and sustainability.
+    </p>
+    <div class="flex justify-center gap-6">
+      <a href="products.html"
+        class="bg-green-500 px-10 py-4 rounded-xl text-black font-bold hover:bg-green-600">
+        Explore Catalogue
+      </a>
+      <a href="contact.html"
+        class="border border-green-400 px-10 py-4 rounded-xl text-green-400 hover:bg-green-400 hover:text-black transition">
+        Partner With Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST METRICS ================= -->
+<section class="py-14 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 text-center gap-10">
+    <div data-aos="fade-up"><h3 class="text-4xl font-bold gradient-text">10+</h3><p>Years Innovation</p></div>
+    <div data-aos="fade-up"><h3 class="text-4xl font-bold gradient-text">500+</h3><p>Dealer Network</p></div>
+    <div data-aos="fade-up"><h3 class="text-4xl font-bold gradient-text">1200+</h3><p>Installations</p></div>
+    <div data-aos="fade-up"><h3 class="text-4xl font-bold gradient-text">ISO</h3><p>Certified Systems</p></div>
+  </div>
+</section>
+
+<section class="py-16 bg-black text-center">
+  <h3 class="text-3xl font-bold mb-10">Certified & Trusted</h3>
+  <div class="flex justify-center gap-10 text-gray-400">
+    <span>ISO 9001</span>
+    <span>IEC Certified</span>
+    <span>CE Mark</span>
+    <span>RoHS</span>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES WE SERVE ================= -->
+<section class="py-28 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h3 class="text-5xl font-extrabold text-center mb-20">
+      Industries <span class="gradient-text">We Serve</span>
+    </h3>
+
+    <div class="grid md:grid-cols-5 gap-12 text-center">
+
+      <!-- Residential -->
+      <div class="group">
+        <div class="w-24 h-24 mx-auto rounded-full border border-gray-700 flex items-center justify-center text-3xl mb-6 group-hover:border-green-400 group-hover:scale-110 transition">
+          🏠
+        </div>
+        <h4 class="text-lg font-semibold">Residential</h4>
+        <p class="text-sm text-gray-400 mt-2">
+          Homes & housing communities
+        </p>
+      </div>
+
+      <!-- Commercial -->
+      <div class="group">
+        <div class="w-24 h-24 mx-auto rounded-full border border-gray-700 flex items-center justify-center text-3xl mb-6 group-hover:border-green-400 group-hover:scale-110 transition">
+          🏢
+        </div>
+        <h4 class="text-lg font-semibold">Commercial</h4>
+        <p class="text-sm text-gray-400 mt-2">
+          Offices & business spaces
+        </p>
+      </div>
+
+      <!-- Industrial -->
+      <div class="group">
+        <div class="w-24 h-24 mx-auto rounded-full border border-gray-700 flex items-center justify-center text-3xl mb-6 group-hover:border-green-400 group-hover:scale-110 transition">
+          🏭
+        </div>
+        <h4 class="text-lg font-semibold">Industrial</h4>
+        <p class="text-sm text-gray-400 mt-2">
+          Factories & manufacturing
+        </p>
+      </div>
+
+      <!-- Infrastructure -->
+      <div class="group">
+        <div class="w-24 h-24 mx-auto rounded-full border border-gray-700 flex items-center justify-center text-3xl mb-6 group-hover:border-green-400 group-hover:scale-110 transition">
+          ⚡
+        </div>
+        <h4 class="text-lg font-semibold">Infrastructure</h4>
+        <p class="text-sm text-gray-400 mt-2">
+          Utilities & public systems
+        </p>
+      </div>
+
+      <!-- EV & Telecom -->
+      <div class="group">
+        <div class="w-24 h-24 mx-auto rounded-full border border-gray-700 flex items-center justify-center text-3xl mb-6 group-hover:border-green-400 group-hover:scale-110 transition">
+          🚗
+        </div>
+        <h4 class="text-lg font-semibold">EV & Telecom</h4>
+        <p class="text-sm text-gray-400 mt-2">
+          Charging & connectivity
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= WHY ELECTRAX ================= -->
+<section class="py-28 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-5xl font-extrabold text-center mb-20">
+      Why <span class="gradient-text">Electrax</span>
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="card-3d bg-gray-900 p-10 rounded-2xl border border-gray-800" data-aos="fade-up">
+        <h4 class="text-2xl font-bold mb-4 gradient-text">Next-Gen Technology</h4>
+        <p class="text-gray-400">
+          Built with advanced energy intelligence and modern electrical architecture.
+        </p>
+      </div>
+
+      <div class="card-3d bg-gray-900 p-10 rounded-2xl border border-gray-800" data-aos="fade-up">
+        <h4 class="text-2xl font-bold mb-4 gradient-text">Dealer-First Design</h4>
+        <p class="text-gray-400">
+          Catalogue crafted to empower dealers with clarity and confidence.
+        </p>
+      </div>
+
+      <div class="card-3d bg-gray-900 p-10 rounded-2xl border border-gray-800" data-aos="fade-up">
+        <h4 class="text-2xl font-bold mb-4 gradient-text">Sustainable Impact</h4>
+        <p class="text-gray-400">
+          Driving clean-energy adoption across industries and communities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-28 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-5xl font-extrabold text-center mb-20">
+      Industry <span class="gradient-text">Use-Cases</span>
+    </h3>
+
+    <div class="grid md:grid-cols-4 gap-10 text-center">
+      <div class="card-3d bg-gray-900 p-8 rounded-xl">
+        <h4 class="text-xl font-bold mb-3">Residential</h4>
+        <p class="text-gray-400">Homes, apartments & housing societies</p>
+      </div>
+
+      <div class="card-3d bg-gray-900 p-8 rounded-xl">
+        <h4 class="text-xl font-bold mb-3">Commercial</h4>
+        <p class="text-gray-400">Offices, malls & business spaces</p>
+      </div>
+
+      <div class="card-3d bg-gray-900 p-8 rounded-xl">
+        <h4 class="text-xl font-bold mb-3">Industrial</h4>
+        <p class="text-gray-400">Factories & manufacturing units</p>
+      </div>
+
+      <div class="card-3d bg-gray-900 p-8 rounded-xl">
+        <h4 class="text-xl font-bold mb-3">Infrastructure</h4>
+        <p class="text-gray-400">EV, telecom & public utilities</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="py-32 bg-gray-950 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h3 class="text-5xl font-extrabold text-center mb-24">
+      How <span class="gradient-text">Electrax</span> Works
+    </h3>
+
+    <div class="grid md:grid-cols-4 gap-16 text-center">
+
+      <!-- STEP 1 -->
+      <div class="group">
+        <div class="w-20 h-20 mx-auto rounded-full bg-green-500 text-black flex items-center justify-center text-2xl font-extrabold mb-6 group-hover:scale-110 transition">
+          1
+        </div>
+        <h4 class="text-2xl font-bold mb-3">Discover</h4>
+        <p class="text-gray-400">
+          Explore our advanced renewable and electrical solutions.
+        </p>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="group">
+        <div class="w-20 h-20 mx-auto rounded-full bg-green-500 text-black flex items-center justify-center text-2xl font-extrabold mb-6 group-hover:scale-110 transition">
+          2
+        </div>
+        <h4 class="text-2xl font-bold mb-3">Consult</h4>
+        <p class="text-gray-400">
+          Get expert guidance and system recommendations.
+        </p>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="group">
+        <div class="w-20 h-20 mx-auto rounded-full bg-green-500 text-black flex items-center justify-center text-2xl font-extrabold mb-6 group-hover:scale-110 transition">
+          3
+        </div>
+        <h4 class="text-2xl font-bold mb-3">Deploy</h4>
+        <p class="text-gray-400">
+          Seamless installation and system integration.
+        </p>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="group">
+        <div class="w-20 h-20 mx-auto rounded-full bg-green-500 text-black flex items-center justify-center text-2xl font-extrabold mb-6 group-hover:scale-110 transition">
+          4
+        </div>
+        <h4 class="text-2xl font-bold mb-3">Support</h4>
+        <p class="text-gray-400">
+          24/7 monitoring, maintenance, and assistance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= FEATURED SOLUTIONS ================= -->
+<section class="py-28 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-5xl font-extrabold text-center mb-20">
+      Featured <span class="gradient-text">Solutions</span>
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
+        <img src="../images/solar-panel-1.jpg" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <h4 class="text-2xl font-bold">Solar Panels</h4>
+
+          <p class="text-gray-400 mt-2">
+            High-efficiency energy harvesting systems.
+          </p>
+
+          <p class="text-gray-400 mt-2">
+            Dealer pricing available after login.
+          </p>
+
+    <button onclick="openLogin()"
+      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
+      View Price
+    </button>
+  </div>
+</div>
+
+
+      <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
+  <img src="../images/inverter-1.jpg" class="h-56 w-full object-cover">
+  <div class="p-8">
+    <h4 class="text-2xl font-bold">Smart Inverters</h4>
+
+    <p class="text-gray-400 mt-2">
+      Intelligent power conversion & monitoring.
+    </p>
+
+    <p class="text-gray-400 mt-2">
+      Dealer pricing available after login.
+    </p>
+
+    <button onclick="openLogin()"
+      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
+      View Price
+    </button>
+  </div>
+</div>
+
+
+     <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
+  <img src="../images/battery-1.jpg" class="h-56 w-full object-cover">
+  <div class="p-8">
+    <h4 class="text-2xl font-bold">Energy Storage</h4>
+
+    <p class="text-gray-400 mt-2">
+      Reliable storage for uninterrupted power supply.
+    </p>
+
+    <p class="text-gray-400 mt-2">
+      Dealer pricing available after login.
+    </p>
+
+    <button onclick="openLogin()"
+      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
+      View Price
+    </button>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-28 bg-black">
+  <div class="max-w-5xl mx-auto px-6">
+    <h3 class="text-5xl font-extrabold text-center mb-16">
+      Frequently Asked <span class="gradient-text">Questions</span>
+    </h3>
+
+    <div class="space-y-6">
+      <details class="bg-gray-900 p-6 rounded-xl">
+        <summary class="font-semibold cursor-pointer">
+          Do you provide installation services?
+        </summary>
+        <p class="text-gray-400 mt-4">
+          Installation support is provided through our authorized dealer network.
+        </p>
+      </details>
+
+      <details class="bg-gray-900 p-6 rounded-xl">
+        <summary class="font-semibold cursor-pointer">
+          Are products suitable for commercial use?
+        </summary>
+        <p class="text-gray-400 mt-4">
+          Yes, our solutions are designed for residential, commercial, and industrial use.
+        </p>
+      </details>
+
+      <details class="bg-gray-900 p-6 rounded-xl">
+        <summary class="font-semibold cursor-pointer">
+          Do products meet certification standards?
+        </summary>
+        <p class="text-gray-400 mt-4">
+          All products comply with ISO, IEC, and relevant industry standards.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE PROMISES ================= -->
+<section class="py-20 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+
+      <!-- VALUE 1 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition">
+        <div class="text-4xl mb-4">🤝</div>
+        <h4 class="text-xl font-bold mb-2">Dealer-First Model</h4>
+        <p class="text-gray-400 text-sm">
+          Pricing and access designed exclusively for authorized partners.
+        </p>
+      </div>
+
+      <!-- VALUE 2 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition">
+        <div class="text-4xl mb-4">⚙️</div>
+        <h4 class="text-xl font-bold mb-2">Future-Ready Systems</h4>
+        <p class="text-gray-400 text-sm">
+          Scalable energy solutions built for long-term performance.
+        </p>
+      </div>
+
+      <!-- VALUE 3 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition">
+        <div class="text-4xl mb-4">🕒</div>
+        <h4 class="text-xl font-bold mb-2">24/7 Expert Support</h4>
+        <p class="text-gray-400 text-sm">
+          Continuous assistance from planning to post-deployment.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DEALER PARTNERSHIP ================= -->
+<section class="py-28 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div>
+      <h3 class="text-5xl font-extrabold mb-6">
+        Become an <span class="gradient-text">Authorized Dealer</span>
+      </h3>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-8">
+        Join Electrax’s growing dealer network and gain access to
+        premium renewable energy products, dealer-exclusive pricing,
+        technical training, and 24/7 support.
+      </p>
+
+      <ul class="space-y-3 text-gray-400 mb-10">
+        <li>✔ Dealer-only product pricing</li>
+        <li>✔ Technical & sales training</li>
+        <li>✔ Priority support & documentation</li>
+        <li>✔ Long-term partnership opportunities</li>
+      </ul>
+
+      <a href="contact.html"
+        class="inline-block bg-green-500 text-black px-10 py-4 rounded-xl font-bold hover:bg-green-600 transition">
+        Apply to Become a Dealer
+      </a>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 shadow-xl">
+      <h4 class="text-2xl font-bold mb-4 gradient-text">
+        Dealer Benefits
+      </h4>
+
+      <div class="space-y-4 text-gray-400">
+        <p>📦 Access to full Electrax product catalogue</p>
+        <p>📊 Business growth & market support</p>
+        <p>🛠 Installation & post-sales assistance</p>
+        <p>📈 Scalable opportunities across regions</p>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-500">
+        * Dealer approval subject to verification
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="py-28 bg-gradient-to-r from-green-500 to-emerald-600 text-black text-center">
+  <h3 class="text-6xl font-extrabold mb-8">Lead the Energy Revolution</h3>
+  <p class="text-2xl mb-12">
+    Partner with Electrax and shape the future of sustainable power.
+  </p>
+  <a href="contact.html"
+    class="bg-black text-green-400 px-12 py-5 rounded-xl font-bold hover:bg-gray-900">
+    Contact Us
+  </a>
+  <a href="javascript:void(0)"
+   title="Coming Soon"
+   class="hover:text-green-400">
+  Download Product Catalogue (Coming Soon)
+</a>
+
+</section>
+<!-- ================= ULTRA FOOTER ================= -->
+<footer class="bg-black border-t border-gray-800 text-gray-400">
+
+  <!-- MAIN FOOTER CONTENT -->
+  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-5 gap-14">
+
+    <!-- BRAND -->
+    <div class="md:col-span-2">
+      <h3 class="text-3xl font-extrabold gradient-text mb-4">Electrax</h3>
+      <p class="text-sm leading-relaxed max-w-md">
+        Electrax Technologies designs intelligent renewable and electrical
+        energy solutions engineered for efficiency, scalability, and
+        long-term sustainability.
+      </p>
+
+      <!-- SOCIAL / PROFESSIONAL -->
+      <div class="flex gap-4 mt-6 text-lg">
+        <a href="#" class="hover:text-green-400" title="LinkedIn">in</a>
+        <a href="#" class="hover:text-green-400" title="Email">✉</a>
+        <a href="#" class="hover:text-green-400" title="Website">🌐</a>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div>
+      <h4 class="text-white font-semibold mb-4">Company</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-green-400">About Us</a></li>
+        <li><a href="products.html" class="hover:text-green-400">Products</a></li>
+        <li><a href="contact.html" class="hover:text-green-400">Contact</a></li>
+        <li><span class="opacity-60">Careers (Coming Soon)</span></li>
+      </ul>
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div>
+      <h4 class="text-white font-semibold mb-4">Solutions</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Solar Energy Systems</li>
+        <li>Smart Inverters</li>
+        <li>Energy Storage</li>
+        <li>Power Electronics</li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div>
+      <h4 class="text-white font-semibold mb-4">Stay Updated</h4>
+      <p class="text-sm mb-4">
+        Subscribe for product updates and energy insights.
+      </p>
+      <form class="flex">
+        <input
+          type="email"
+          placeholder="Your email"
+          class="w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-l text-sm focus:outline-none">
+        <button
+          type="button"
+          class="bg-green-500 px-4 py-2 text-black text-sm font-semibold rounded-r hover:bg-green-600">
+          Join
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- LEGAL BAR -->
+  <div class="border-t border-gray-800 py-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+
+      <p>© 2026 Electrax Technologies. All Rights Reserved.</p>
+
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-green-400">Privacy Policy</a>
+        <a href="#" class="hover:text-green-400">Terms of Use</a>
+        <a href="#" class="hover:text-green-400">Disclaimer</a>
+      </div>
+
+    </div>
+  </div>
+     <p class="mt-2 text-sm">
+    GSTIN: <span class="text-gray-300">36ABCDE1234F1Z5</span>
+  </p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 right-6 bg-green-500 text-black px-4 py-2 rounded-full font-bold hover:bg-green-600">
+  ↑
+</button>
+
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+<script>
+  const links = document.querySelectorAll("nav a");
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add("text-green-400");
+    }
+  });
+</script>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal"
+  class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+
+  <div class="bg-gray-900 p-8 rounded-2xl w-full max-w-sm relative">
+    <button onclick="closeLogin()"
+      class="absolute top-4 right-4 text-gray-400 hover:text-white">
+      ✕
+    </button>
+
+    <h3 class="text-2xl font-bold mb-6 gradient-text text-center">
+      Dealer Login
+    </h3>
+
+    <input type="text" placeholder="Dealer ID"
+      class="w-full mb-4 p-3 bg-gray-800 border border-gray-700 rounded">
+
+    <input type="password" placeholder="Password"
+      class="w-full mb-6 p-3 bg-gray-800 border border-gray-700 rounded">
+
+    <button onclick="showPrice()"
+      class="w-full bg-green-500 py-3 text-black font-bold rounded hover:bg-green-600">
+      Login & View Price
+    </button>
+
+    <p class="text-sm text-gray-400 text-center mt-4">
+      Dealer access only
+    </p>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    document.getElementById("loader").style.display = "none";
+  });
+</script>
+<script>
+  function openLogin() {
+    document.getElementById("loginModal").classList.remove("hidden");
+  }
+
+  function closeLogin() {
+    document.getElementById("loginModal").classList.add("hidden");
+  }
+
+  function showPrice() {
+    closeLogin();
+    alert("Dealer Price: Available upon authorized access");
+  }
+</script>
+<script>
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress").style.width =
+      (scrollTop / height) * 100 + "%";
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  // Optional: close menu when clicking a link
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.add("hidden");
+    });
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  // Auto close menu after click
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.add("hidden");
+    });
+  });
+</script>
+<script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+</script>
+
+<script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "PrintScreen") {
+      alert("Screenshots are disabled on this page.");
+      navigator.clipboard.writeText("");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.body.classList.add("blur-screen");
+    } else {
+      document.body.classList.remove("blur-screen");
+    }
+  });
+</script>
+
+</body>
+</html>
