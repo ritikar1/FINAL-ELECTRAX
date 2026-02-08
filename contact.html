@@ -105,18 +105,20 @@
   onsubmit="handleSubmit(event)">
 
 
+    <div class="flex gap-6 mb-4 justify-center text-gray-300">
+  <label class="flex items-center gap-2 cursor-pointer">
+  <input type="checkbox" id="contactEmail" onchange="toggleEmail()" checked>
+  <span>Email</span>
+</label>
 
-        <div class="flex gap-6 mb-4 justify-center text-gray-300">
-  <label class="flex items-center gap-2">
-    <input type="checkbox">
-    <span>Email</span>
-  </label>
-  <label class="flex items-center gap-2">
-    <input type="checkbox">
+
+  <label class="flex items-center gap-2 cursor-pointer">
+    <input type="checkbox" id="contactPhone" onchange="togglePhone()">
     <span>Phone Call</span>
   </label>
-  <label class="flex items-center gap-2">
-    <input type="checkbox">
+
+  <label class="flex items-center gap-2 cursor-pointer">
+    <input type="checkbox" id="contactWhatsapp" onchange="toggleWhatsapp()">
     <span>WhatsApp</span>
   </label>
 </div>
@@ -126,9 +128,30 @@
 class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
 
 
-  <!-- Email -->
-<input type="email" id="email" required placeholder="Your Email"
-class="w-full p-3 bg-gray-800 border border-gray-700 rounded">
+ <!-- Email -->
+<input
+  type="email"
+  id="email"
+  placeholder="Your Email"
+  class="w-full p-3 bg-gray-800 border border-gray-700 rounded"
+  required
+>
+
+<!-- Phone Number (Hidden by default) -->
+<input
+  type="tel"
+  id="phone"
+  placeholder="Your Phone Number"
+  class="hidden w-full p-3 bg-gray-800 border border-gray-700 rounded"
+>
+
+<!-- WhatsApp Number (Hidden by default) -->
+<input
+  type="tel"
+  id="whatsapp"
+  placeholder="Your WhatsApp Number"
+  class="hidden w-full p-3 bg-gray-800 border border-gray-700 rounded"
+>
 
 
   <!-- Enquiry Type (ADD HERE) -->
@@ -311,6 +334,49 @@ class="w-full p-3 bg-gray-800 border border-gray-700 rounded"></textarea>
       document.body.classList.remove("blur-screen");
     }
   });
+</script>
+<script>
+  function toggleEmail() {
+    const emailCheckbox = document.getElementById("contactEmail");
+    const emailInput = document.getElementById("email");
+
+    if (emailCheckbox.checked) {
+      emailInput.classList.remove("hidden");
+      emailInput.required = true;
+    } else {
+      emailInput.classList.add("hidden");
+      emailInput.required = false;
+      emailInput.value = "";
+    }
+  }
+
+  function togglePhone() {
+    const phoneCheckbox = document.getElementById("contactPhone");
+    const phoneInput = document.getElementById("phone");
+
+    if (phoneCheckbox.checked) {
+      phoneInput.classList.remove("hidden");
+      phoneInput.required = true;
+    } else {
+      phoneInput.classList.add("hidden");
+      phoneInput.required = false;
+      phoneInput.value = "";
+    }
+  }
+
+  function toggleWhatsapp() {
+    const whatsappCheckbox = document.getElementById("contactWhatsapp");
+    const whatsappInput = document.getElementById("whatsapp");
+
+    if (whatsappCheckbox.checked) {
+      whatsappInput.classList.remove("hidden");
+      whatsappInput.required = true;
+    } else {
+      whatsappInput.classList.add("hidden");
+      whatsappInput.required = false;
+      whatsappInput.value = "";
+    }
+  }
 </script>
 
 
