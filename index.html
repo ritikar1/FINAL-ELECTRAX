@@ -352,76 +352,128 @@
 </section>
 
 
-
 <!-- ================= FEATURED SOLUTIONS ================= -->
 <section class="py-28 bg-gray-950">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-5xl font-extrabold text-center mb-20">
-      Featured <span class="gradient-text">Solutions</span>
-    </h3>
 
+    <!-- Heading -->
+    <div class="text-center mb-20">
+      <h3 class="text-5xl font-extrabold text-white">
+        Featured <span class="gradient-text">Solutions</span>
+      </h3>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        Engineered energy systems built for performance, reliability, and scale.
+      </p>
+    </div>
+
+    <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-12">
-      <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
-        <img src="../images/solar-panel-1.jpg" class="h-56 w-full object-cover">
+
+      <!-- CARD -->
+      <div class="group relative bg-gray-900 rounded-2xl overflow-hidden
+                  border border-gray-800 hover:border-green-400
+                  transition-all duration-500
+                  hover:-translate-y-4 hover:shadow-[0_25px_60px_-15px_rgba(34,197,94,0.25)]">
+
+        <!-- Image -->
+        <div class="overflow-hidden">
+          <img src="../images/solar-panel-1.jpg"
+               alt="Solar Panel System"
+               class="h-56 w-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-110">
+        </div>
+
+        <!-- Content -->
         <div class="p-8">
-          <h4 class="text-2xl font-bold">Solar Panels</h4>
+          <h4 class="text-2xl font-bold text-white">Solar Panels</h4>
 
-          <p class="text-gray-400 mt-2">
-            High-efficiency energy harvesting systems.
+          <p class="text-gray-400 mt-3">
+            High-efficiency photovoltaic systems optimized for maximum energy yield.
           </p>
 
-          <p class="text-gray-400 mt-2">
-            Dealer pricing available after login.
+          <!-- Badge -->
+          <span class="inline-block mt-4 text-xs uppercase tracking-wide
+                       bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
+            Dealer Login Required
+          </span>
+
+          <!-- CTA -->
+          <button onclick="openLogin()"
+            class="mt-6 w-full bg-green-500 text-black py-3 rounded-xl font-semibold
+                   hover:bg-green-600 transition">
+            View Dealer Pricing
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="group relative bg-gray-900 rounded-2xl overflow-hidden
+                  border border-gray-800 hover:border-green-400
+                  transition-all duration-500
+                  hover:-translate-y-4 hover:shadow-[0_25px_60px_-15px_rgba(34,197,94,0.25)]">
+
+        <div class="overflow-hidden">
+          <img src="../images/inverter-1.jpg"
+               alt="Smart Inverter"
+               class="h-56 w-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-110">
+        </div>
+
+        <div class="p-8">
+          <h4 class="text-2xl font-bold text-white">Smart Inverters</h4>
+
+          <p class="text-gray-400 mt-3">
+            Intelligent power conversion with real-time monitoring and analytics.
           </p>
 
-    <button onclick="openLogin()"
-      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
-      View Price
-    </button>
-  </div>
-</div>
+          <span class="inline-block mt-4 text-xs uppercase tracking-wide
+                       bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
+            Dealer Login Required
+          </span>
 
+          <button onclick="openLogin()"
+            class="mt-6 w-full bg-green-500 text-black py-3 rounded-xl font-semibold
+                   hover:bg-green-600 transition">
+            View Dealer Pricing
+          </button>
+        </div>
+      </div>
 
-      <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
-  <img src="../images/inverter-1.jpg" class="h-56 w-full object-cover">
-  <div class="p-8">
-    <h4 class="text-2xl font-bold">Smart Inverters</h4>
+      <!-- CARD -->
+      <div class="group relative bg-gray-900 rounded-2xl overflow-hidden
+                  border border-gray-800 hover:border-green-400
+                  transition-all duration-500
+                  hover:-translate-y-4 hover:shadow-[0_25px_60px_-15px_rgba(34,197,94,0.25)]">
 
-    <p class="text-gray-400 mt-2">
-      Intelligent power conversion & monitoring.
-    </p>
+        <div class="overflow-hidden">
+          <img src="../images/battery-1.jpg"
+               alt="Energy Storage System"
+               class="h-56 w-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-110">
+        </div>
 
-    <p class="text-gray-400 mt-2">
-      Dealer pricing available after login.
-    </p>
+        <div class="p-8">
+          <h4 class="text-2xl font-bold text-white">Energy Storage</h4>
 
-    <button onclick="openLogin()"
-      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
-      View Price
-    </button>
-  </div>
-</div>
+          <p class="text-gray-400 mt-3">
+            Reliable battery storage solutions for uninterrupted power supply.
+          </p>
 
+          <span class="inline-block mt-4 text-xs uppercase tracking-wide
+                       bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
+            Dealer Login Required
+          </span>
 
-     <div class="card-3d bg-gray-900 rounded-2xl overflow-hidden" data-aos="zoom-in">
-  <img src="../images/battery-1.jpg" class="h-56 w-full object-cover">
-  <div class="p-8">
-    <h4 class="text-2xl font-bold">Energy Storage</h4>
-
-    <p class="text-gray-400 mt-2">
-      Reliable storage for uninterrupted power supply.
-    </p>
-
-    <p class="text-gray-400 mt-2">
-      Dealer pricing available after login.
-    </p>
-
-    <button onclick="openLogin()"
-      class="mt-4 bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600">
-      View Price
-    </button>
-  </div>
-</div>
+          <button onclick="openLogin()"
+            class="mt-6 w-full bg-green-500 text-black py-3 rounded-xl font-semibold
+                   hover:bg-green-600 transition">
+            View Dealer Pricing
+          </button>
+        </div>
+      </div>
 
     </div>
   </div>
