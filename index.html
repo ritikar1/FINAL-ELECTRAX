@@ -797,25 +797,38 @@
   const emailInput = document.getElementById("emailInput");
   const message = document.getElementById("newsletterMessage");
 
+  let hideTimeout;
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    clearTimeout(hideTimeout);
 
     const email = emailInput.value.trim();
 
     if (!email) {
-      message.textContent = "Please enter a valid email address.";
-      message.className = "mt-3 text-sm text-red-400";
-      message.classList.remove("hidden");
+      showMessage("Please enter a valid email address.", "text-red-400");
       return;
     }
 
-    message.textContent = "Thanks for subscribing!🥳 ";
-    message.className = "mt-3 text-sm text-green-400";
-    message.classList.remove("hidden");
-
+    showMessage("Thanks for subscribing!🥳", "text-green-400");
     form.reset();
   });
-</script>
 
+  function showMessage(text, colorClass) {
+    message.textContent = text;
+    message.className =
+      `mt-3 text-sm ${colorClass} transition-opacity duration-500 opacity-100`;
+    message.classList.remove("hidden");
+
+    hideTimeout = setTimeout(() => {
+      message.classList.add("opacity-0");
+
+      setTimeout(() => {
+        message.classList.add("hidden");
+      }, 500);
+    }, 3000);
+  }
+</script>
 </body>
 </html>
