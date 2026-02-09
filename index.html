@@ -52,28 +52,39 @@
   <h1 class="text-3xl font-extrabold gradient-text animate-pulse">Electrax</h1>
 </div>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    <!-- LOGO -->
-    <h1 class="text-2xl font-extrabold text-green-400">Electrax</h1>
+    <!-- Logo -->
+    <h1 class="text-2xl font-extrabold gradient-text">
+      Electrax
+    </h1>
 
-    <!-- DESKTOP MENU -->
-    <ul class="hidden md:flex space-x-6 font-medium text-white">
+    <!-- Hamburger (mobile only) -->
+    <button onclick="toggleMenu()"
+      class="md:hidden text-gray-300 text-2xl focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Menu -->
+    <ul id="mobileMenu"
+      class="hidden md:flex gap-8 font-medium">
       <li><a href="index.html" class="hover:text-green-400">Home</a></li>
       <li><a href="about.html" class="hover:text-green-400">About</a></li>
-      <li><a href="products.html" class="hover:text-green-400">Products</a></li>
+      <li><a href="products.html" class="text-green-400">Products</a></li>
       <li><a href="contact.html" class="hover:text-green-400">Contact</a></li>
     </ul>
 
-    <!-- MOBILE MENU BUTTON -->
-    <button onclick="toggleMenu()" class="text-3xl text-white">
-     ☰
-    </button>
-
-
   </div>
+
+  <!-- Mobile dropdown -->
+  <ul id="mobileDropdown"
+    class="hidden md:hidden flex-col bg-black border-t border-gray-800 px-6 py-4 space-y-4">
+    <li><a href="index.html" class="block">Home</a></li>
+    <li><a href="about.html" class="block">About</a></li>
+    <li><a href="products.html" class="block text-green-400">Products</a></li>
+    <li><a href="contact.html" class="block">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- MOBILE MENU -->
@@ -877,5 +888,11 @@
     }, 3000);
   }
 </script>
+  <script>
+  function toggleMenu() {
+    document.getElementById("mobileDropdown").classList.toggle("hidden");
+  }
+</script>
+
 </body>
 </html>
