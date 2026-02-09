@@ -379,6 +379,18 @@ class="w-full p-3 bg-gray-800 border border-gray-700 rounded"></textarea>
   }
 </script>
 
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    document.getElementById("successNotification").classList.remove("hidden");
+    e.target.reset();
+  }
+
+  function closeSuccess() {
+    document.getElementById("successNotification").classList.add("hidden");
+  }
+</script>
 
 </body>
 </html>
